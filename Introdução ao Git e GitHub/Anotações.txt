@@ -1,0 +1,66 @@
+****Intalação Git /Terminal Windows****
+
+Se der tudo certo, volta nada!
+dir - lista de diretório na pasta situadas
+cd - change director
+cd / - base do diretório onde está situado
+cd Windows - entra na pasta windows
+cd .. - retroceder um nível
+cls - clear screen
+TAB - autocompleta
+mkdir nome- make director
+echo - printa de volta o que foi escrito
+> - redirecionador de fluxo
+del - deleta somente arquivos da pasta
+rmdir nomedapasta /S /Q - (remove director) removendo o repositório
+
+****Git Bash****
+Abre na pasta intaladada
+
+openssl sha1 arquivo.txt - incripta o arquivo gerando a chave
+c508f9e0fe6daaf258515ce88e871f73ccf964e7
+a chave alterada de acordo com a mudança de arquivo, se voltar a configuração anterior, indica a memsa chave anterior
+
+****Objetos internos do Git****
+Os arquivos desses objetos terão metadados sobre o objeto
+
+BLOB- Indica o arquivo, sha1 e o tamanho do arquivo
+
+TREE - Aponta para blobs ou outras trees, guarda o sha1 e o nome do arquivo, gera um novo sha1 dos metadardos da tree se for alterado o blob
+
+COMMIT - Aponta para tree, parente (outro commmit onde esse é baseado), autor e mensagem. Dando significado as pastas, indicando o autor e um timestamp.
+Possuem um sha1, se alterar um blob de um commit, alterar o sha1 do commit
+Garatem que é a versão mais recente e inalterada
+
+****
+Ao fazer um cadastro no GitHub é necessário uma nova SSH Key
+ssh-keygen -t ed25519 -C carolinaliberatomarrreiro@gmail.com
+senha: 32324124
+Na pasta indicada, abre a .pub (publica) e cola no github 
+
+****
+Digita no bash: eval $(ssh-agente -s), dentro da pasta .ssh
+
+****Clonar repositórios com SSHKey (sem ter que colocar senhas)
+No repositório, Code, Clone, SSH, copia o link
+No bash dentro da pasta .ssh: eval $(ssh-agent -s) - te retornará um pin do processo
+ssh-add id_ed25519
+yes
+git clone "cola o link pelo botão esquerdo (paste)" - Fará o download indicando a procentagem
+
+***Tokens de acesso pessoal (tendo que colocar senhas/tokens)
+Settings / Developer settings / Personal acess tokens
+Gerando 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 
+Não consegue ver novamente esse código, sendo necessário ser salvo na maquina
+No repositório, Code, Clone, HTML, copia o link
+git clone "cola"
+Cola o token
+
+***
+Criação de um arquivo = untracked
+git add * / git add "nome do arquivo" = Staged
+git commit -m =  Empacota o arquivom com uma mensagem e commita, podendo agora ser empurrado para o servidor
+git push origin master = empurra para o apelido origin na branch master
+
+***Baixar repositório
+git clone "link do git hub"
